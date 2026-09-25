@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para ti, mi amor ❤️</title>
 
+<title>Para mi señorita Bahi Cruz 🌻❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -19,30 +22,90 @@ html{
 }
 
 body{
-    background:#090706;
-    color:#fff;
     font-family:'Montserrat',sans-serif;
+    background:
+        radial-gradient(circle at 50% 20%, #302510 0%, #100d08 40%, #050403 100%);
+    color:#fff;
     overflow-x:hidden;
 }
 
-/* FONDO */
-body::before{
-    content:"";
+/* =========================
+   PANTALLA INICIAL
+========================= */
+
+#intro{
     position:fixed;
     inset:0;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
     background:
-        radial-gradient(circle at 50% 20%,rgba(255,193,7,.15),transparent 35%),
-        radial-gradient(circle at 20% 80%,rgba(255,215,80,.08),transparent 30%);
-    pointer-events:none;
-    z-index:-2;
+        radial-gradient(circle at center, #3a2c10 0%, #110e08 45%, #030303 100%);
+    transition:opacity 1s ease, visibility 1s ease;
 }
 
-/* ESTRELLAS */
+#intro.hidden{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.intro-content{
+    width:90%;
+    max-width:650px;
+    padding:40px;
+}
+
+.sunflower-small{
+    font-size:65px;
+    animation:floatFlower 3s ease-in-out infinite;
+}
+
+.intro-content h1{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(48px,10vw,90px);
+    color:#ffd95a;
+    margin:15px 0;
+}
+
+.intro-content p{
+    color:#eee;
+    font-size:15px;
+    letter-spacing:2px;
+    line-height:1.8;
+}
+
+.open-btn{
+    margin-top:35px;
+    padding:16px 34px;
+    border:1px solid #f5d15a;
+    border-radius:50px;
+    background:linear-gradient(135deg,#f6d365,#b77b09);
+    color:#241a05;
+    font-weight:600;
+    letter-spacing:1px;
+    cursor:pointer;
+    font-size:15px;
+    box-shadow:0 0 30px rgba(255,211,75,.25);
+    transition:.3s;
+}
+
+.open-btn:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 45px rgba(255,211,75,.5);
+}
+
+/* =========================
+   FONDO
+========================= */
+
 .stars{
     position:fixed;
     inset:0;
     pointer-events:none;
-    z-index:-1;
+    z-index:0;
     overflow:hidden;
 }
 
@@ -50,82 +113,88 @@ body::before{
     position:absolute;
     width:2px;
     height:2px;
-    background:#fff8b0;
+    background:#fff;
     border-radius:50%;
+    opacity:.7;
     animation:twinkle 3s infinite alternate;
 }
 
 @keyframes twinkle{
-    from{opacity:.2;transform:scale(.7)}
-    to{opacity:1;transform:scale(1.5)}
+    from{opacity:.2; transform:scale(.7)}
+    to{opacity:1; transform:scale(1.5)}
 }
 
-/* PORTADA */
+/* =========================
+   HERO
+========================= */
+
 .hero{
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:30px;
     position:relative;
+    z-index:1;
+    padding:40px 20px;
 }
 
 .hero-content{
-    max-width:850px;
+    max-width:900px;
 }
 
-.small{
-    color:#f5c542;
-    letter-spacing:5px;
-    font-size:13px;
+.eyebrow{
+    color:#f4cf62;
     text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:12px;
     margin-bottom:20px;
 }
 
-h1{
+.hero h1{
     font-family:'Great Vibes',cursive;
-    font-size:clamp(65px,12vw,140px);
-    color:#ffd54f;
+    font-size:clamp(70px,15vw,150px);
     font-weight:400;
-    text-shadow:0 0 30px rgba(255,193,7,.35);
+    color:#ffd75a;
+    text-shadow:
+        0 0 10px rgba(255,215,90,.3),
+        0 0 45px rgba(255,190,30,.15);
 }
 
 .hero h2{
     font-family:'Cormorant Garamond',serif;
-    font-size:clamp(28px,5vw,48px);
+    font-size:clamp(25px,5vw,45px);
     font-weight:400;
-    margin:15px 0;
+    margin-top:-15px;
 }
 
-.subtitle{
-    color:#d8d0c0;
-    line-height:1.8;
-    max-width:650px;
-    margin:auto;
+.hero-description{
+    max-width:600px;
+    margin:25px auto;
+    color:#ddd;
+    line-height:1.9;
     font-size:15px;
 }
 
-.button{
-    display:inline-block;
-    margin-top:35px;
-    padding:14px 30px;
-    border:1px solid #d4a62a;
-    border-radius:50px;
-    color:#ffd95a;
-    text-decoration:none;
-    transition:.3s;
+.scroll{
+    margin-top:55px;
+    color:#d9b947;
+    font-size:12px;
+    letter-spacing:3px;
 }
 
-.button:hover{
-    background:#ffd54f;
-    color:#15100a;
-    transform:translateY(-3px);
-}
+/* =========================
+   SECCIONES
+========================= */
 
-/* CARTA */
-.section{
+section{
+    position:relative;
+    z-index:2;
     padding:100px 20px;
+}
+
+.container{
+    width:100%;
     max-width:1000px;
     margin:auto;
 }
@@ -133,192 +202,324 @@ h1{
 .section-title{
     text-align:center;
     font-family:'Great Vibes',cursive;
-    color:#ffd54f;
+    color:#ffd75a;
     font-size:65px;
-    margin-bottom:45px;
+    font-weight:400;
+    margin-bottom:15px;
 }
 
+.section-subtitle{
+    text-align:center;
+    color:#aaa;
+    margin-bottom:50px;
+    font-size:14px;
+}
+
+/* =========================
+   CARTA
+========================= */
+
 .letter{
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,213,79,.18);
+    max-width:800px;
+    margin:auto;
+    padding:55px;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+    border:1px solid rgba(255,213,90,.25);
     border-radius:25px;
-    padding:50px;
-    box-shadow:0 20px 80px rgba(0,0,0,.4);
+    box-shadow:0 25px 80px rgba(0,0,0,.45);
+    backdrop-filter:blur(10px);
 }
 
 .letter p{
     font-family:'Cormorant Garamond',serif;
     font-size:22px;
     line-height:1.8;
-    color:#eee6d8;
+    color:#eee;
     margin-bottom:22px;
 }
 
-.signature{
-    text-align:right;
+.letter .signature{
     font-family:'Great Vibes',cursive;
-    color:#ffd54f;
-    font-size:45px;
-    margin-top:30px;
+    color:#ffd75a;
+    font-size:42px;
+    text-align:right;
+    margin-top:35px;
 }
 
-/* FLORES */
-.flowers-section{
-    min-height:100vh;
-    padding:100px 20px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-}
+/* =========================
+   FLORES
+========================= */
 
 .bouquet{
-    position:relative;
-    width:360px;
-    height:430px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:30px;
+    min-height:430px;
     margin-top:30px;
 }
 
 .flower{
-    position:absolute;
-    bottom:70px;
-    left:50%;
-    width:8px;
-    height:270px;
-    background:linear-gradient(#3d6928,#203b18);
-    transform-origin:bottom;
-    border-radius:10px;
-}
-
-.flower:nth-child(1){
-    transform:translateX(-50%) rotate(-25deg);
+    position:relative;
+    width:100px;
+    height:360px;
 }
 
 .flower:nth-child(2){
-    transform:translateX(-50%) rotate(-8deg);
+    transform:scale(1.2);
 }
 
 .flower:nth-child(3){
-    transform:translateX(-50%) rotate(12deg);
+    transform:scale(.9);
 }
 
-.flower:nth-child(4){
-    transform:translateX(-50%) rotate(28deg);
-}
-
-.head{
+.flower-head{
     position:absolute;
-    top:-10px;
+    top:20px;
     left:50%;
-    width:90px;
-    height:90px;
     transform:translateX(-50%);
+    width:100px;
+    height:100px;
+    border-radius:50%;
 }
 
 .petal{
     position:absolute;
-    left:31px;
-    top:5px;
-    width:28px;
-    height:43px;
-    background:#ffd21f;
+    width:40px;
+    height:65px;
+    background:linear-gradient(145deg,#ffe878,#e7a91b);
     border-radius:50% 50% 45% 45%;
-    transform-origin:14px 40px;
-    box-shadow:0 0 15px rgba(255,210,31,.2);
+    left:30px;
+    top:18px;
+    transform-origin:20px 32px;
+    box-shadow:0 0 12px rgba(255,205,60,.35);
 }
 
-.petal:nth-child(1){transform:rotate(0deg) translateY(-25px)}
-.petal:nth-child(2){transform:rotate(60deg) translateY(-25px)}
-.petal:nth-child(3){transform:rotate(120deg) translateY(-25px)}
-.petal:nth-child(4){transform:rotate(180deg) translateY(-25px)}
-.petal:nth-child(5){transform:rotate(240deg) translateY(-25px)}
-.petal:nth-child(6){transform:rotate(300deg) translateY(-25px)}
+.petal:nth-child(1){transform:rotate(0deg) translateY(-28px)}
+.petal:nth-child(2){transform:rotate(60deg) translateY(-28px)}
+.petal:nth-child(3){transform:rotate(120deg) translateY(-28px)}
+.petal:nth-child(4){transform:rotate(180deg) translateY(-28px)}
+.petal:nth-child(5){transform:rotate(240deg) translateY(-28px)}
+.petal:nth-child(6){transform:rotate(300deg) translateY(-28px)}
 
-.center{
+.flower-center{
     position:absolute;
-    left:33px;
-    top:33px;
-    width:25px;
-    height:25px;
-    background:#6b4105;
+    width:45px;
+    height:45px;
+    background:radial-gradient(circle,#5a3507,#1f1303);
     border-radius:50%;
-    box-shadow:inset 0 0 0 5px #a86805;
+    left:28px;
+    top:28px;
+    z-index:5;
+    box-shadow:0 0 12px rgba(0,0,0,.5);
 }
 
-/* MENSAJE FINAL */
-.final{
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.stem{
+    position:absolute;
+    width:8px;
+    height:250px;
+    background:linear-gradient(90deg,#193b1d,#4d813d,#173219);
+    left:46px;
+    top:95px;
+    border-radius:10px;
+}
+
+.leaf{
+    position:absolute;
+    width:65px;
+    height:30px;
+    background:linear-gradient(135deg,#5f913f,#1d4622);
+    border-radius:100% 0 100% 0;
+}
+
+.leaf.left{
+    top:190px;
+    left:0;
+    transform:rotate(-25deg);
+}
+
+.leaf.right{
+    top:240px;
+    right:-10px;
+    transform:rotate(25deg) scaleX(-1);
+}
+
+@keyframes flowerSway{
+    0%,100%{transform:rotate(-2deg)}
+    50%{transform:rotate(3deg)}
+}
+
+.flower{
+    animation:flowerSway 4s ease-in-out infinite;
+}
+
+/* =========================
+   MOMENTOS
+========================= */
+
+.memories{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.memory{
+    min-height:200px;
+    padding:30px 22px;
+    border-radius:22px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,215,90,.16);
     text-align:center;
-    padding:30px;
+    transition:.35s;
+}
+
+.memory:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,215,90,.45);
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.memory-icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.memory h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    color:#ffd75a;
+    margin-bottom:10px;
+}
+
+.memory p{
+    color:#bbb;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* =========================
+   MENSAJE FINAL
+========================= */
+
+.final{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
 .final-content{
     max-width:800px;
 }
 
+.final .big-heart{
+    font-size:75px;
+    animation:heartbeat 1.5s infinite;
+}
+
+.final h2{
+    font-family:'Great Vibes',cursive;
+    color:#ffd75a;
+    font-size:clamp(60px,12vw,110px);
+    font-weight:400;
+}
+
 .final p{
     font-family:'Cormorant Garamond',serif;
     font-size:27px;
     line-height:1.7;
-    color:#eee3ce;
-}
-
-.big-heart{
-    font-size:80px;
-    margin:30px;
-    animation:heartbeat 1.5s infinite;
+    color:#eee;
 }
 
 @keyframes heartbeat{
     0%,100%{transform:scale(1)}
-    50%{transform:scale(1.15)}
+    15%{transform:scale(1.15)}
+    30%{transform:scale(1)}
+    45%{transform:scale(1.1)}
 }
 
-/* FLORES CAYENDO */
+/* =========================
+   MUSICA
+========================= */
+
+.music-button{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:500;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    border:1px solid #f5d15a;
+    background:rgba(25,20,8,.9);
+    color:#ffd75a;
+    font-size:22px;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(255,213,70,.2);
+    transition:.3s;
+}
+
+.music-button:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   PETALOS
+========================= */
+
 .falling{
     position:fixed;
-    top:-50px;
+    top:-30px;
+    z-index:10;
     pointer-events:none;
-    z-index:20;
     animation:fall linear forwards;
 }
 
 @keyframes fall{
-    to{
-        transform:translateY(110vh) rotate(360deg);
+    0%{
+        transform:translateY(-30px) rotate(0deg);
+        opacity:0;
+    }
+    10%{opacity:1}
+    100%{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:.1;
     }
 }
 
-/* RESPONSIVE */
-@media(max-width:600px){
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:700px){
+
+    section{
+        padding:75px 18px;
+    }
 
     .letter{
-        padding:28px 22px;
+        padding:30px 22px;
     }
 
     .letter p{
         font-size:19px;
     }
 
-    .bouquet{
-        transform:scale(.8);
-        margin-top:-10px;
+    .memories{
+        grid-template-columns:1fr;
     }
 
-    .section{
-        padding:75px 18px;
+    .bouquet{
+        gap:5px;
+        transform:scale(.8);
+        margin-left:-20px;
+        margin-right:-20px;
     }
 
     .section-title{
         font-size:52px;
-    }
-
-    .final p{
-        font-size:22px;
     }
 }
 </style>
@@ -326,215 +527,450 @@ h1{
 
 <body>
 
+<!-- =========================
+     MUSICA
+========================= -->
+
+<audio id="music" src="musica.mp3" loop preload="auto"></audio>
+
+<button class="music-button" id="musicBtn" onclick="toggleMusic()" title="Reproducir música">
+    🎵
+</button>
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<div id="intro">
+
+    <div class="intro-content">
+
+        <div class="sunflower-small">🌻</div>
+
+        <div class="eyebrow">
+            Una pequeña sorpresa para ti
+        </div>
+
+        <h1>Amore</h1>
+
+        <p>
+            Hay algo que preparé especialmente para ti,
+            mi señorita Bahi Cruz.
+        </p>
+
+        <button class="open-btn" onclick="openLove()">
+            Abrir mi sorpresa ❤️
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     ESTRELLAS
+========================= -->
+
 <div class="stars" id="stars"></div>
 
-<section class="hero">
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
 
     <div class="hero-content">
 
-        <div class="small">Para la persona que hace mis días más bonitos</div>
+        <div class="eyebrow">
+            Para mi señorita Bahi Cruz
+        </div>
 
-        <h1>Mi amor</h1>
+        <h1>Amore</h1>
 
-        <h2>Feliz primer aniversario ❤️</h2>
+        <h2>🌻 Mi persona especial 🌻</h2>
 
-        <p class="subtitle">
-            Un pequeño detalle para recordarte cuánto significas para mí
-            y lo feliz que me hace compartir mi vida contigo.
+        <p class="hero-description">
+            Si pudiera guardar todos los momentos bonitos que hemos vivido,
+            los convertiría en flores amarillas para regalártelas una por una.
         </p>
 
-        <a href="#carta" class="button">Tengo algo que decirte ✨</a>
-
-    </div>
-
-</section>
-
-
-<section class="section" id="carta">
-
-    <h2 class="section-title">Una carta para ti</h2>
-
-    <div class="letter">
-
-        <p>
-            Feliz 1 año, mi amor ❤️
-        </p>
-
-        <p>
-            Hoy quiero agradecerte por haberte cruzado en mi vida y por todo
-            lo bonito que has traído a ella. Gracias por encontrarme, por
-            hacerme tan feliz, por enseñarme tantas cosas y por cada momento
-            que hemos compartido juntos.
-        </p>
-
-        <p>
-            Admiro mucho esa forma tuya de ser, tan alegre, espontánea y llena
-            de vida. Tu alegría se ha convertido también en una parte muy
-            bonita de la mía, y no sabes cuánto agradezco tenerte a mi lado.
-        </p>
-
-        <p>
-            Ha sido un año lleno de momentos, aprendizajes, risas y experiencias
-            que quiero seguir compartiendo contigo. Espero que este sea solo el
-            primero de muchos años más juntos.
-        </p>
-
-        <p>
-            Gracias por ser tú, por hacerme sonreír y por darle tanta alegría
-            a mi vida. ❤️
-        </p>
-
-        <p>
-            Te quiero muchísimo. Feliz primer aniversario, mi amor. 🥰❤️
-        </p>
-
-        <div class="signature">
-            Siempre tuyo ❤️
+        <div class="scroll">
+            ↓ BAJA, TENGO ALGO QUE DECIRTE ↓
         </div>
 
     </div>
 
-</section>
+</header>
 
+<!-- =========================
+     CARTA
+========================= -->
 
-<section class="flowers-section">
+<section>
 
-    <h2 class="section-title">Flores amarillas para ti 🌻</h2>
+    <div class="container">
 
-    <p class="subtitle">
-        Porque si pudiera regalarte todas las flores del mundo,
-        aun así no serían suficientes para representar lo que siento por ti.
-    </p>
+        <h2 class="section-title">
+            Para ti, Amore
+        </h2>
 
-    <div class="bouquet">
+        <p class="section-subtitle">
+            Algunas palabras que salen directamente de mi corazón ❤️
+        </p>
 
-        <div class="flower">
-            <div class="head">
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <b class="center"></b>
+        <div class="letter">
+
+            <p>
+                Feliz primer aniversario, mi amor. ❤️
+            </p>
+
+            <p>
+                Hoy quiero agradecerte por haberte cruzado en mi vida
+                y por todo lo bonito que has traído a ella.
+                Gracias por encontrarme, por hacerme tan feliz,
+                por enseñarme tantas cosas y por cada momento
+                que hemos compartido juntos.
+            </p>
+
+            <p>
+                Admiro mucho esa forma tuya de ser, tan alegre,
+                espontánea y llena de vida.
+                Tu alegría se ha convertido también en una parte
+                muy bonita de la mía, y no sabes cuánto agradezco
+                tenerte a mi lado.
+            </p>
+
+            <p>
+                Ha sido un año lleno de momentos, aprendizajes,
+                risas y experiencias que quiero seguir compartiendo contigo.
+                Espero que este sea solo el primero de muchos años más juntos.
+            </p>
+
+            <p>
+                Gracias por ser tú, por hacerme sonreír
+                y por darle tanta alegría a mi vida.
+            </p>
+
+            <p>
+                Te amo muchísimo, Amore.
+                ❤️🌻
+            </p>
+
+            <div class="signature">
+                Con todo mi amor ❤️
             </div>
-        </div>
 
-        <div class="flower">
-            <div class="head">
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <b class="center"></b>
-            </div>
-        </div>
-
-        <div class="flower">
-            <div class="head">
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <b class="center"></b>
-            </div>
-        </div>
-
-        <div class="flower">
-            <div class="head">
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <i class="petal"></i>
-                <b class="center"></b>
-            </div>
         </div>
 
     </div>
 
 </section>
 
+<!-- =========================
+     FLORES
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Flores amarillas para ti
+        </h2>
+
+        <p class="section-subtitle">
+            Porque tú mereces todas las flores del mundo 🌻
+        </p>
+
+        <div class="bouquet">
+
+            <div class="flower">
+
+                <div class="flower-head">
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+
+                    <div class="flower-center"></div>
+                </div>
+
+                <div class="stem"></div>
+                <div class="leaf left"></div>
+                <div class="leaf right"></div>
+
+            </div>
+
+
+            <div class="flower">
+
+                <div class="flower-head">
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+
+                    <div class="flower-center"></div>
+                </div>
+
+                <div class="stem"></div>
+                <div class="leaf left"></div>
+                <div class="leaf right"></div>
+
+            </div>
+
+
+            <div class="flower">
+
+                <div class="flower-head">
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+                    <i class="petal"></i>
+
+                    <div class="flower-center"></div>
+                </div>
+
+                <div class="stem"></div>
+                <div class="leaf left"></div>
+                <div class="leaf right"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     MOMENTOS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Nosotros ❤️
+        </h2>
+
+        <p class="section-subtitle">
+            Lo más bonito todavía está por venir...
+        </p>
+
+        <div class="memories">
+
+            <div class="memory">
+
+                <div class="memory-icon">❤️</div>
+
+                <h3>Tu sonrisa</h3>
+
+                <p>
+                    Una de mis cosas favoritas del mundo
+                    es verte sonreír.
+                </p>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="memory-icon">🥰</div>
+
+                <h3>Mis momentos favoritos</h3>
+
+                <p>
+                    Todos esos pequeños momentos contigo
+                    que terminan convirtiéndose en grandes recuerdos.
+                </p>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="memory-icon">🌻</div>
+
+                <h3>Lo que viene</h3>
+
+                <p>
+                    Quiero seguir creando historias,
+                    recuerdos y aventuras contigo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FINAL
+========================= -->
 
 <section class="final">
 
     <div class="final-content">
 
-        <div class="big-heart">❤️</div>
+        <div class="big-heart">
+            ❤️
+        </div>
 
-        <h2 class="section-title">Por muchos años más</h2>
+        <h2>Amore</h2>
 
         <p>
-            No sé qué nos espera en los próximos años,
-            pero sí sé que quiero seguir creando recuerdos,
-            riendo, aprendiendo y viviendo momentos contigo.
+            Gracias por este primer año,
+            por cada sonrisa, cada abrazo,
+            cada conversación y cada momento.
         </p>
 
-        <p style="margin-top:30px;">
-            Gracias por este primer año.
-            Gracias por estar.
-            Gracias por ser tú.
+        <br>
+
+        <p>
+            Quiero seguir caminando contigo
+            y descubrir todo lo bonito que todavía
+            nos queda por vivir.
         </p>
 
-        <div class="signature">
-            Te quiero muchísimo ❤️
-        </div>
+        <br>
+
+        <p>
+            <strong>
+                Te amo muchísimo. ❤️
+            </strong>
+        </p>
+
+        <br>
+
+        <p>
+            🌻 Feliz primer aniversario, mi amor 🌻
+        </p>
 
     </div>
 
 </section>
 
-
 <script>
 
-/* ESTRELLAS */
+/* =========================
+   ABRIR SORPRESA
+========================= */
+
+function openLove(){
+
+    const intro = document.getElementById("intro");
+    const music = document.getElementById("music");
+
+    intro.classList.add("hidden");
+
+    music.play().then(function(){
+
+        document.getElementById("musicBtn").textContent = "🔊";
+
+    }).catch(function(){
+
+        document.getElementById("musicBtn").textContent = "🎵";
+
+    });
+
+    createFallingFlowers();
+}
+
+
+/* =========================
+   MUSICA
+========================= */
+
+function toggleMusic(){
+
+    const music = document.getElementById("music");
+    const button = document.getElementById("musicBtn");
+
+    if(music.paused){
+
+        music.play();
+
+        button.textContent = "🔊";
+
+    }else{
+
+        music.pause();
+
+        button.textContent = "🎵";
+
+    }
+
+}
+
+
+/* =========================
+   ESTRELLAS
+========================= */
 
 const stars = document.getElementById("stars");
 
-for(let i=0;i<100;i++){
+for(let i = 0; i < 100; i++){
 
-    const star = document.createElement("span");
+    const star = document.createElement("div");
 
-    star.className="star";
+    star.className = "star";
 
-    star.style.left=Math.random()*100+"%";
-    star.style.top=Math.random()*100+"%";
-    star.style.animationDelay=(Math.random()*3)+"s";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
 
     stars.appendChild(star);
 }
 
 
-/* FLORES Y CORAZONES CAYENDO */
+/* =========================
+   FLORES QUE CAEN
+========================= */
 
-const symbols=["🌻","🌼","💛","❤️","✨"];
+function createFallingFlowers(){
 
-setInterval(()=>{
+    setInterval(function(){
 
-    const element=document.createElement("div");
+        const flower = document.createElement("div");
 
-    element.className="falling";
+        flower.className = "falling";
 
-    element.innerHTML=symbols[Math.floor(Math.random()*symbols.length)];
+        const items = ["🌻","🌼","🌸","❤️"];
 
-    element.style.left=Math.random()*100+"vw";
+        flower.textContent =
+            items[Math.floor(Math.random() * items.length)];
 
-    element.style.fontSize=(15+Math.random()*20)+"px";
+        flower.style.left =
+            Math.random() * 100 + "vw";
 
-    element.style.animationDuration=(5+Math.random()*5)+"s";
+        flower.style.fontSize =
+            (15 + Math.random() * 20) + "px";
 
-    document.body.appendChild(element);
+        flower.style.animationDuration =
+            (5 + Math.random() * 7) + "s";
 
-    setTimeout(()=>{
-        element.remove();
-    },10000);
+        document.body.appendChild(flower);
 
-},700);
+        setTimeout(function(){
+
+            flower.remove();
+
+        },12000);
+
+    },700);
+
+}
 
 </script>
 
