@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para mi señorita Bahi Cruz 🌻❤️</title>
+<title>Para mi señorita Cruz 🌻❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,13 +24,13 @@ html{
 body{
     font-family:'Montserrat',sans-serif;
     background:
-        radial-gradient(circle at 50% 20%, #302510 0%, #100d08 40%, #050403 100%);
+        radial-gradient(circle at 50% 20%,#302510 0%,#100d08 40%,#050403 100%);
     color:#fff;
     overflow-x:hidden;
 }
 
 /* =========================
-   PANTALLA INICIAL
+   INTRO
 ========================= */
 
 #intro{
@@ -42,8 +42,8 @@ body{
     align-items:center;
     text-align:center;
     background:
-        radial-gradient(circle at center, #3a2c10 0%, #110e08 45%, #030303 100%);
-    transition:opacity 1s ease, visibility 1s ease;
+        radial-gradient(circle at center,#3a2c10 0%,#110e08 45%,#030303 100%);
+    transition:opacity 1s ease,visibility 1s ease;
 }
 
 #intro.hidden{
@@ -54,7 +54,7 @@ body{
 
 .intro-content{
     width:90%;
-    max-width:650px;
+    max-width:700px;
     padding:40px;
 }
 
@@ -63,11 +63,16 @@ body{
     animation:floatFlower 3s ease-in-out infinite;
 }
 
+.penguin-intro{
+    font-size:55px;
+    animation:penguinFloat 3s ease-in-out infinite;
+}
+
 .intro-content h1{
     font-family:'Great Vibes',cursive;
-    font-size:clamp(48px,10vw,90px);
+    font-size:clamp(55px,10vw,95px);
     color:#ffd95a;
-    margin:15px 0;
+    margin:10px 0;
 }
 
 .intro-content p{
@@ -98,7 +103,7 @@ body{
 }
 
 /* =========================
-   FONDO
+   ESTRELLAS
 ========================= */
 
 .stars{
@@ -120,8 +125,60 @@ body{
 }
 
 @keyframes twinkle{
-    from{opacity:.2; transform:scale(.7)}
-    to{opacity:1; transform:scale(1.5)}
+    from{
+        opacity:.2;
+        transform:scale(.7)
+    }
+    to{
+        opacity:1;
+        transform:scale(1.5)
+    }
+}
+
+/* =========================
+   PINGÜINOS FLOTANTES
+========================= */
+
+.penguin{
+    position:absolute;
+    font-size:48px;
+    z-index:3;
+    animation:penguinFloat 4s ease-in-out infinite;
+    filter:drop-shadow(0 5px 10px rgba(0,0,0,.4));
+}
+
+.penguin.one{
+    left:5%;
+    top:22%;
+}
+
+.penguin.two{
+    right:6%;
+    top:35%;
+    animation-delay:1s;
+}
+
+.penguin.three{
+    left:8%;
+    bottom:15%;
+    font-size:42px;
+    animation-delay:2s;
+}
+
+.penguin.four{
+    right:8%;
+    bottom:20%;
+    font-size:42px;
+    animation-delay:1.5s;
+}
+
+@keyframes penguinFloat{
+    0%,100%{
+        transform:translateY(0) rotate(-3deg);
+    }
+    50%{
+        transform:translateY(-14px) rotate(3deg);
+    }
 }
 
 /* =========================
@@ -216,6 +273,74 @@ section{
 }
 
 /* =========================
+   LUGAR SEGURO
+========================= */
+
+.safe-place{
+    max-width:850px;
+    margin:auto;
+    position:relative;
+    padding:65px 45px;
+    text-align:center;
+    border-radius:35px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,215,90,.12),
+            rgba(255,255,255,.035)
+        );
+    border:1px solid rgba(255,215,90,.28);
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.45),
+        inset 0 0 50px rgba(255,215,90,.025);
+    overflow:hidden;
+}
+
+.safe-place::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:rgba(255,213,70,.06);
+    top:-110px;
+    left:-110px;
+}
+
+.safe-penguins{
+    font-size:70px;
+    margin-bottom:15px;
+    animation:penguinFloat 3.5s ease-in-out infinite;
+}
+
+.safe-place h2{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(50px,9vw,85px);
+    color:#ffd75a;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.safe-place .main-message{
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    line-height:1.6;
+    color:#fff;
+}
+
+.safe-place .small-message{
+    margin-top:25px;
+    color:#cfcfcf;
+    line-height:1.9;
+    font-size:15px;
+}
+
+.safe-heart{
+    margin-top:30px;
+    font-size:35px;
+}
+
+/* =========================
    CARTA
 ========================= */
 
@@ -224,7 +349,11 @@ section{
     margin:auto;
     padding:55px;
     background:
-        linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
     border:1px solid rgba(255,213,90,.25);
     border-radius:25px;
     box-shadow:0 25px 80px rgba(0,0,0,.45);
@@ -281,7 +410,6 @@ section{
     transform:translateX(-50%);
     width:100px;
     height:100px;
-    border-radius:50%;
 }
 
 .petal{
@@ -312,7 +440,6 @@ section{
     left:28px;
     top:28px;
     z-index:5;
-    box-shadow:0 0 12px rgba(0,0,0,.5);
 }
 
 .stem{
@@ -345,13 +472,17 @@ section{
     transform:rotate(25deg) scaleX(-1);
 }
 
-@keyframes flowerSway{
-    0%,100%{transform:rotate(-2deg)}
-    50%{transform:rotate(3deg)}
-}
-
 .flower{
     animation:flowerSway 4s ease-in-out infinite;
+}
+
+@keyframes flowerSway{
+    0%,100%{
+        transform:rotate(-2deg);
+    }
+    50%{
+        transform:rotate(3deg);
+    }
 }
 
 /* =========================
@@ -365,7 +496,7 @@ section{
 }
 
 .memory{
-    min-height:200px;
+    min-height:220px;
     padding:30px 22px;
     border-radius:22px;
     background:rgba(255,255,255,.045);
@@ -399,11 +530,11 @@ section{
 }
 
 /* =========================
-   MENSAJE FINAL
+   FINAL
 ========================= */
 
 .final{
-    min-height:80vh;
+    min-height:90vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -431,6 +562,12 @@ section{
     font-size:27px;
     line-height:1.7;
     color:#eee;
+}
+
+.final-penguins{
+    font-size:65px;
+    margin-top:30px;
+    animation:penguinFloat 3s ease-in-out infinite;
 }
 
 @keyframes heartbeat{
@@ -482,7 +619,11 @@ section{
         transform:translateY(-30px) rotate(0deg);
         opacity:0;
     }
-    10%{opacity:1}
+
+    10%{
+        opacity:1;
+    }
+
     100%{
         transform:translateY(110vh) rotate(720deg);
         opacity:.1;
@@ -521,29 +662,43 @@ section{
     .section-title{
         font-size:52px;
     }
+
+    .safe-place{
+        padding:50px 22px;
+    }
+
+    .safe-place .main-message{
+        font-size:24px;
+    }
+
+    .penguin{
+        font-size:32px;
+        opacity:.75;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     MUSICA
-========================= -->
-
+<!-- MUSICA -->
 <audio id="music" src="musica.mp3" loop preload="auto"></audio>
 
-<button class="music-button" id="musicBtn" onclick="toggleMusic()" title="Reproducir música">
+<button
+    class="music-button"
+    id="musicBtn"
+    onclick="toggleMusic()"
+    title="Reproducir música">
     🎵
 </button>
 
-<!-- =========================
-     INTRO
-========================= -->
+<!-- INTRO -->
 
 <div id="intro">
 
     <div class="intro-content">
+
+        <div class="penguin-intro">🐧❤️🐧</div>
 
         <div class="sunflower-small">🌻</div>
 
@@ -554,8 +709,11 @@ section{
         <h1>Amore</h1>
 
         <p>
-            Hay algo que preparé especialmente para ti,
-            mi señorita Bahi Cruz.
+            Para mi señorita Cruz ❤️
+        </p>
+
+        <p>
+            Preparé algo especialmente para ti.
         </p>
 
         <button class="open-btn" onclick="openLove()">
@@ -566,22 +724,25 @@ section{
 
 </div>
 
-<!-- =========================
-     ESTRELLAS
-========================= -->
+<!-- ESTRELLAS -->
 
 <div class="stars" id="stars"></div>
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- PINGÜINOS -->
+
+<div class="penguin one">🐧</div>
+<div class="penguin two">🐧❤️</div>
+<div class="penguin three">🐧</div>
+<div class="penguin four">❤️🐧</div>
+
+<!-- HERO -->
 
 <header class="hero">
 
     <div class="hero-content">
 
         <div class="eyebrow">
-            Para mi señorita Bahi Cruz
+            Para mi señorita Cruz
         </div>
 
         <h1>Amore</h1>
@@ -589,8 +750,11 @@ section{
         <h2>🌻 Mi persona especial 🌻</h2>
 
         <p class="hero-description">
-            Si pudiera guardar todos los momentos bonitos que hemos vivido,
-            los convertiría en flores amarillas para regalártelas una por una.
+
+            Si pudiera guardar todos los momentos bonitos
+            que hemos vivido, los convertiría en flores amarillas
+            para regalártelas una por una.
+
         </p>
 
         <div class="scroll">
@@ -601,9 +765,55 @@ section{
 
 </header>
 
-<!-- =========================
-     CARTA
-========================= -->
+<!-- LUGAR SEGURO -->
+
+<section>
+
+    <div class="container">
+
+        <div class="safe-place">
+
+            <div class="safe-penguins">
+                🐧❤️🐧
+            </div>
+
+            <h2>
+                Eres mi lugar seguro
+            </h2>
+
+            <p class="main-message">
+
+                Mi señorita Cruz,
+                contigo puedo ser yo mismo,
+                puedo reír, hablar, soñar
+                y simplemente estar.
+
+            </p>
+
+            <p class="small-message">
+
+                Gracias por ser ese lugar al que siempre quiero volver.
+                Ese lugar donde encuentro tranquilidad,
+                cariño y una razón para sonreír.
+
+                <br><br>
+
+                No importa qué tan difícil pueda ser un día,
+                saber que estás conmigo hace que todo sea un poquito mejor.
+
+            </p>
+
+            <div class="safe-heart">
+                ❤️🌻❤️
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CARTA -->
 
 <section>
 
@@ -632,27 +842,34 @@ section{
             </p>
 
             <p>
-                Admiro mucho esa forma tuya de ser, tan alegre,
-                espontánea y llena de vida.
-                Tu alegría se ha convertido también en una parte
-                muy bonita de la mía, y no sabes cuánto agradezco
-                tenerte a mi lado.
+                Admiro mucho esa forma tuya de ser,
+                tan alegre, espontánea y llena de vida.
+                Tu alegría se ha convertido también
+                en una parte muy bonita de la mía,
+                y no sabes cuánto agradezco tenerte a mi lado.
             </p>
 
             <p>
-                Ha sido un año lleno de momentos, aprendizajes,
-                risas y experiencias que quiero seguir compartiendo contigo.
-                Espero que este sea solo el primero de muchos años más juntos.
+                Ha sido un año lleno de momentos,
+                aprendizajes, risas y experiencias
+                que quiero seguir compartiendo contigo.
+                Espero que este sea solo el primero
+                de muchos años más juntos.
             </p>
 
             <p>
-                Gracias por ser tú, por hacerme sonreír
+                Gracias por ser tú,
+                por hacerme sonreír
                 y por darle tanta alegría a mi vida.
             </p>
 
             <p>
+                Y sobre todo...
+            </p>
+
+            <p>
                 Te amo muchísimo, Amore.
-                ❤️🌻
+                ❤️🐧🌻
             </p>
 
             <div class="signature">
@@ -665,9 +882,7 @@ section{
 
 </section>
 
-<!-- =========================
-     FLORES
-========================= -->
+<!-- FLORES -->
 
 <section>
 
@@ -686,6 +901,7 @@ section{
             <div class="flower">
 
                 <div class="flower-head">
+
                     <i class="petal"></i>
                     <i class="petal"></i>
                     <i class="petal"></i>
@@ -694,6 +910,7 @@ section{
                     <i class="petal"></i>
 
                     <div class="flower-center"></div>
+
                 </div>
 
                 <div class="stem"></div>
@@ -702,10 +919,10 @@ section{
 
             </div>
 
-
             <div class="flower">
 
                 <div class="flower-head">
+
                     <i class="petal"></i>
                     <i class="petal"></i>
                     <i class="petal"></i>
@@ -714,6 +931,7 @@ section{
                     <i class="petal"></i>
 
                     <div class="flower-center"></div>
+
                 </div>
 
                 <div class="stem"></div>
@@ -722,10 +940,10 @@ section{
 
             </div>
 
-
             <div class="flower">
 
                 <div class="flower-head">
+
                     <i class="petal"></i>
                     <i class="petal"></i>
                     <i class="petal"></i>
@@ -734,6 +952,7 @@ section{
                     <i class="petal"></i>
 
                     <div class="flower-center"></div>
+
                 </div>
 
                 <div class="stem"></div>
@@ -748,9 +967,7 @@ section{
 
 </section>
 
-<!-- =========================
-     MOMENTOS
-========================= -->
+<!-- MOMENTOS -->
 
 <section>
 
@@ -768,9 +985,30 @@ section{
 
             <div class="memory">
 
-                <div class="memory-icon">❤️</div>
+                <div class="memory-icon">
+                    🐧❤️🐧
+                </div>
 
-                <h3>Tu sonrisa</h3>
+                <h3>
+                    Tú y yo
+                </h3>
+
+                <p>
+                    Dos personas que encontraron
+                    un lugar especial en la vida del otro.
+                </p>
+
+            </div>
+
+            <div class="memory">
+
+                <div class="memory-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Tu sonrisa
+                </h3>
 
                 <p>
                     Una de mis cosas favoritas del mundo
@@ -779,26 +1017,15 @@ section{
 
             </div>
 
-
             <div class="memory">
 
-                <div class="memory-icon">🥰</div>
+                <div class="memory-icon">
+                    🌻
+                </div>
 
-                <h3>Mis momentos favoritos</h3>
-
-                <p>
-                    Todos esos pequeños momentos contigo
-                    que terminan convirtiéndose en grandes recuerdos.
-                </p>
-
-            </div>
-
-
-            <div class="memory">
-
-                <div class="memory-icon">🌻</div>
-
-                <h3>Lo que viene</h3>
+                <h3>
+                    Lo que viene
+                </h3>
 
                 <p>
                     Quiero seguir creando historias,
@@ -813,9 +1040,7 @@ section{
 
 </section>
 
-<!-- =========================
-     FINAL
-========================= -->
+<!-- FINAL -->
 
 <section class="final">
 
@@ -825,7 +1050,9 @@ section{
             ❤️
         </div>
 
-        <h2>Amore</h2>
+        <h2>
+            Mi señorita Cruz
+        </h2>
 
         <p>
             Gracias por este primer año,
@@ -837,17 +1064,29 @@ section{
 
         <p>
             Quiero seguir caminando contigo
-            y descubrir todo lo bonito que todavía
-            nos queda por vivir.
+            y descubrir todo lo bonito
+            que todavía nos queda por vivir.
         </p>
 
         <br>
 
         <p>
             <strong>
-                Te amo muchísimo. ❤️
+                Eres mi lugar seguro.
             </strong>
         </p>
+
+        <br>
+
+        <p>
+            <strong>
+                Te amo muchísimo, Amore. ❤️
+            </strong>
+        </p>
+
+        <div class="final-penguins">
+            🐧❤️🐧
+        </div>
 
         <br>
 
@@ -874,11 +1113,11 @@ function openLove(){
 
     music.play().then(function(){
 
-        document.getElementById("musicBtn").textContent = "🔊";
+        document.getElementById("musicBtn").textContent="🔊";
 
     }).catch(function(){
 
-        document.getElementById("musicBtn").textContent = "🎵";
+        document.getElementById("musicBtn").textContent="🎵";
 
     });
 
@@ -892,20 +1131,18 @@ function openLove(){
 
 function toggleMusic(){
 
-    const music = document.getElementById("music");
-    const button = document.getElementById("musicBtn");
+    const music=document.getElementById("music");
+    const button=document.getElementById("musicBtn");
 
     if(music.paused){
 
         music.play();
-
-        button.textContent = "🔊";
+        button.textContent="🔊";
 
     }else{
 
         music.pause();
-
-        button.textContent = "🎵";
+        button.textContent="🎵";
 
     }
 
@@ -916,49 +1153,55 @@ function toggleMusic(){
    ESTRELLAS
 ========================= */
 
-const stars = document.getElementById("stars");
+const stars=document.getElementById("stars");
 
-for(let i = 0; i < 100; i++){
+for(let i=0;i<100;i++){
 
-    const star = document.createElement("div");
+    const star=document.createElement("div");
 
-    star.className = "star";
+    star.className="star";
 
-    star.style.left = Math.random() * 100 + "%";
-    star.style.top = Math.random() * 100 + "%";
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
 
-    star.style.animationDelay =
-        Math.random() * 3 + "s";
+    star.style.animationDelay=
+        Math.random()*3+"s";
 
     stars.appendChild(star);
 }
 
 
 /* =========================
-   FLORES QUE CAEN
+   FLORES Y CORAZONES
 ========================= */
 
 function createFallingFlowers(){
 
     setInterval(function(){
 
-        const flower = document.createElement("div");
+        const flower=document.createElement("div");
 
-        flower.className = "falling";
+        flower.className="falling";
 
-        const items = ["🌻","🌼","🌸","❤️"];
+        const items=[
+            "🌻",
+            "🌼",
+            "🌸",
+            "❤️",
+            "🐧"
+        ];
 
-        flower.textContent =
-            items[Math.floor(Math.random() * items.length)];
+        flower.textContent=
+            items[Math.floor(Math.random()*items.length)];
 
-        flower.style.left =
-            Math.random() * 100 + "vw";
+        flower.style.left=
+            Math.random()*100+"vw";
 
-        flower.style.fontSize =
-            (15 + Math.random() * 20) + "px";
+        flower.style.fontSize=
+            (15+Math.random()*20)+"px";
 
-        flower.style.animationDuration =
-            (5 + Math.random() * 7) + "s";
+        flower.style.animationDuration=
+            (5+Math.random()*7)+"s";
 
         document.body.appendChild(flower);
 
