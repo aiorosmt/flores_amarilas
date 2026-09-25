@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti, mi amor ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#090706;
+    color:#fff;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* FONDO */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 50% 20%,rgba(255,193,7,.15),transparent 35%),
+        radial-gradient(circle at 20% 80%,rgba(255,215,80,.08),transparent 30%);
+    pointer-events:none;
+    z-index:-2;
+}
+
+/* ESTRELLAS */
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#fff8b0;
+    border-radius:50%;
+    animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;transform:scale(.7)}
+    to{opacity:1;transform:scale(1.5)}
+}
+
+/* PORTADA */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.small{
+    color:#f5c542;
+    letter-spacing:5px;
+    font-size:13px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(65px,12vw,140px);
+    color:#ffd54f;
+    font-weight:400;
+    text-shadow:0 0 30px rgba(255,193,7,.35);
+}
+
+.hero h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(28px,5vw,48px);
+    font-weight:400;
+    margin:15px 0;
+}
+
+.subtitle{
+    color:#d8d0c0;
+    line-height:1.8;
+    max-width:650px;
+    margin:auto;
+    font-size:15px;
+}
+
+.button{
+    display:inline-block;
+    margin-top:35px;
+    padding:14px 30px;
+    border:1px solid #d4a62a;
+    border-radius:50px;
+    color:#ffd95a;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.button:hover{
+    background:#ffd54f;
+    color:#15100a;
+    transform:translateY(-3px);
+}
+
+/* CARTA */
+.section{
+    padding:100px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-family:'Great Vibes',cursive;
+    color:#ffd54f;
+    font-size:65px;
+    margin-bottom:45px;
+}
+
+.letter{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,213,79,.18);
+    border-radius:25px;
+    padding:50px;
+    box-shadow:0 20px 80px rgba(0,0,0,.4);
+}
+
+.letter p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    line-height:1.8;
+    color:#eee6d8;
+    margin-bottom:22px;
+}
+
+.signature{
+    text-align:right;
+    font-family:'Great Vibes',cursive;
+    color:#ffd54f;
+    font-size:45px;
+    margin-top:30px;
+}
+
+/* FLORES */
+.flowers-section{
+    min-height:100vh;
+    padding:100px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.bouquet{
+    position:relative;
+    width:360px;
+    height:430px;
+    margin-top:30px;
+}
+
+.flower{
+    position:absolute;
+    bottom:70px;
+    left:50%;
+    width:8px;
+    height:270px;
+    background:linear-gradient(#3d6928,#203b18);
+    transform-origin:bottom;
+    border-radius:10px;
+}
+
+.flower:nth-child(1){
+    transform:translateX(-50%) rotate(-25deg);
+}
+
+.flower:nth-child(2){
+    transform:translateX(-50%) rotate(-8deg);
+}
+
+.flower:nth-child(3){
+    transform:translateX(-50%) rotate(12deg);
+}
+
+.flower:nth-child(4){
+    transform:translateX(-50%) rotate(28deg);
+}
+
+.head{
+    position:absolute;
+    top:-10px;
+    left:50%;
+    width:90px;
+    height:90px;
+    transform:translateX(-50%);
+}
+
+.petal{
+    position:absolute;
+    left:31px;
+    top:5px;
+    width:28px;
+    height:43px;
+    background:#ffd21f;
+    border-radius:50% 50% 45% 45%;
+    transform-origin:14px 40px;
+    box-shadow:0 0 15px rgba(255,210,31,.2);
+}
+
+.petal:nth-child(1){transform:rotate(0deg) translateY(-25px)}
+.petal:nth-child(2){transform:rotate(60deg) translateY(-25px)}
+.petal:nth-child(3){transform:rotate(120deg) translateY(-25px)}
+.petal:nth-child(4){transform:rotate(180deg) translateY(-25px)}
+.petal:nth-child(5){transform:rotate(240deg) translateY(-25px)}
+.petal:nth-child(6){transform:rotate(300deg) translateY(-25px)}
+
+.center{
+    position:absolute;
+    left:33px;
+    top:33px;
+    width:25px;
+    height:25px;
+    background:#6b4105;
+    border-radius:50%;
+    box-shadow:inset 0 0 0 5px #a86805;
+}
+
+/* MENSAJE FINAL */
+.final{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
+}
+
+.final-content{
+    max-width:800px;
+}
+
+.final p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:27px;
+    line-height:1.7;
+    color:#eee3ce;
+}
+
+.big-heart{
+    font-size:80px;
+    margin:30px;
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.15)}
+}
+
+/* FLORES CAYENDO */
+.falling{
+    position:fixed;
+    top:-50px;
+    pointer-events:none;
+    z-index:20;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+
+    .letter{
+        padding:28px 22px;
+    }
+
+    .letter p{
+        font-size:19px;
+    }
+
+    .bouquet{
+        transform:scale(.8);
+        margin-top:-10px;
+    }
+
+    .section{
+        padding:75px 18px;
+    }
+
+    .section-title{
+        font-size:52px;
+    }
+
+    .final p{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small">Para la persona que hace mis días más bonitos</div>
+
+        <h1>Mi amor</h1>
+
+        <h2>Feliz primer aniversario ❤️</h2>
+
+        <p class="subtitle">
+            Un pequeño detalle para recordarte cuánto significas para mí
+            y lo feliz que me hace compartir mi vida contigo.
+        </p>
+
+        <a href="#carta" class="button">Tengo algo que decirte ✨</a>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="carta">
+
+    <h2 class="section-title">Una carta para ti</h2>
+
+    <div class="letter">
+
+        <p>
+            Feliz 1 año, mi amor ❤️
+        </p>
+
+        <p>
+            Hoy quiero agradecerte por haberte cruzado en mi vida y por todo
+            lo bonito que has traído a ella. Gracias por encontrarme, por
+            hacerme tan feliz, por enseñarme tantas cosas y por cada momento
+            que hemos compartido juntos.
+        </p>
+
+        <p>
+            Admiro mucho esa forma tuya de ser, tan alegre, espontánea y llena
+            de vida. Tu alegría se ha convertido también en una parte muy
+            bonita de la mía, y no sabes cuánto agradezco tenerte a mi lado.
+        </p>
+
+        <p>
+            Ha sido un año lleno de momentos, aprendizajes, risas y experiencias
+            que quiero seguir compartiendo contigo. Espero que este sea solo el
+            primero de muchos años más juntos.
+        </p>
+
+        <p>
+            Gracias por ser tú, por hacerme sonreír y por darle tanta alegría
+            a mi vida. ❤️
+        </p>
+
+        <p>
+            Te quiero muchísimo. Feliz primer aniversario, mi amor. 🥰❤️
+        </p>
+
+        <div class="signature">
+            Siempre tuyo ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="flowers-section">
+
+    <h2 class="section-title">Flores amarillas para ti 🌻</h2>
+
+    <p class="subtitle">
+        Porque si pudiera regalarte todas las flores del mundo,
+        aun así no serían suficientes para representar lo que siento por ti.
+    </p>
+
+    <div class="bouquet">
+
+        <div class="flower">
+            <div class="head">
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <b class="center"></b>
+            </div>
+        </div>
+
+        <div class="flower">
+            <div class="head">
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <b class="center"></b>
+            </div>
+        </div>
+
+        <div class="flower">
+            <div class="head">
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <b class="center"></b>
+            </div>
+        </div>
+
+        <div class="flower">
+            <div class="head">
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <i class="petal"></i>
+                <b class="center"></b>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="final">
+
+    <div class="final-content">
+
+        <div class="big-heart">❤️</div>
+
+        <h2 class="section-title">Por muchos años más</h2>
+
+        <p>
+            No sé qué nos espera en los próximos años,
+            pero sí sé que quiero seguir creando recuerdos,
+            riendo, aprendiendo y viviendo momentos contigo.
+        </p>
+
+        <p style="margin-top:30px;">
+            Gracias por este primer año.
+            Gracias por estar.
+            Gracias por ser tú.
+        </p>
+
+        <div class="signature">
+            Te quiero muchísimo ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ESTRELLAS */
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<100;i++){
+
+    const star = document.createElement("span");
+
+    star.className="star";
+
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
+    star.style.animationDelay=(Math.random()*3)+"s";
+
+    stars.appendChild(star);
+}
+
+
+/* FLORES Y CORAZONES CAYENDO */
+
+const symbols=["🌻","🌼","💛","❤️","✨"];
+
+setInterval(()=>{
+
+    const element=document.createElement("div");
+
+    element.className="falling";
+
+    element.innerHTML=symbols[Math.floor(Math.random()*symbols.length)];
+
+    element.style.left=Math.random()*100+"vw";
+
+    element.style.fontSize=(15+Math.random()*20)+"px";
+
+    element.style.animationDuration=(5+Math.random()*5)+"s";
+
+    document.body.appendChild(element);
+
+    setTimeout(()=>{
+        element.remove();
+    },10000);
+
+},700);
+
+</script>
+
+</body>
+</html>
